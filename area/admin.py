@@ -1,18 +1,11 @@
 from django.contrib import admin
-from django_mptt_admin.admin import DjangoMpttAdmin
+from mptt.admin import DraggableMPTTAdmin
 
-from .models import AdministrativeLevel, Area
-
-
-class AreaAdmin2(admin.ModelAdmin):
-    list_display = ('id', 'name', 'parent_area', 'level', 'administrative_level')
+from .models import Area
 
 
-class AreaAdmin(DjangoMpttAdmin):
-    list_display = ('id', 'name', 'parent_area', 'level', 'administrative_level')
+class AreaAdmin(DraggableMPTTAdmin):
+    list_display = ('tree_actions', 'indented_title', 'id', 'name', 'parent_area', 'level')
 
 
 admin.site.register(Area, AreaAdmin)
-# admin.site.register(Area, AreaAdmin2)
-
-admin.site.register(AdministrativeLevel)

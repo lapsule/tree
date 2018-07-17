@@ -14,11 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.conf.urls import re_path
 from django.contrib import admin
-from django.urls import path
+from filebrowser.sites import site
+
 from area.views import tree
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'^tree/', tree),
+    url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'admin/filebrowser/', site.urls),
+    url('grappelli/', include('grappelli.urls')),  # grappelli URLS
 ]

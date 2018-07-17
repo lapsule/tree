@@ -29,6 +29,9 @@ ALLOWED_HOSTS = ['0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli.dashboard',
+    'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +41,10 @@ INSTALLED_APPS = (
     'mptt',
     'area',
     'django_mptt_admin',
+    'rest_framework',
+    # 'blog',
+    # 'genericadmin',
+    # 'evaluation',
 )
 
 MIDDLEWARE = [
@@ -103,3 +110,13 @@ STATICFILES_DIRS = [
     ('js', os.path.join(STATIC_ROOT, 'js')),
     ('img', os.path.join(STATIC_ROOT, 'img')),
 ]
+GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+
+from filebrowser.sites import site
+
+site.directory = "uploads/"
+
+directory_local = os.path.join(BASE_DIR, site.directory)
+if not os.path.exists(directory_local):
+    os.mkdir(directory_local)
+print(BASE_DIR, directory_local)
