@@ -119,4 +119,4 @@ site.directory = "uploads/"
 directory_local = os.path.join(BASE_DIR, site.directory)
 if not os.path.exists(directory_local):
     os.mkdir(directory_local)
-print(BASE_DIR, directory_local)
+# print(BASE_DIR, directory_local)

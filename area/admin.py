@@ -1,7 +1,7 @@
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
-from .models import Area
+from .models import *
 
 
 class AreaAdmin(DraggableMPTTAdmin):
@@ -9,3 +9,5 @@ class AreaAdmin(DraggableMPTTAdmin):
 
 
 admin.site.register(Area, AreaAdmin)
+admin.site.register(Province)
+admin.site.register(City)

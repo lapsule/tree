@@ -3,4 +3,4 @@ django-mptt==0.9.0
 django-mptt-admin==0.5.1
 django-filebrowser==3.10.1
 django-grappelli==2.11.1
-# django-genericadmin==0.7.0
+django-genericadmin==0.7.0
