@@ -18,8 +18,20 @@ class AreaAdmin(DraggableMPTTAdmin):
     )
 
 
+class CommonAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'name',
+        'alias',
+        'parent_area',
+        'level',
+        'area_code',
+        'postcode',
+    )
+
+
 admin.site.register(Area, AreaAdmin)
-admin.site.register(Province)
-admin.site.register(City)
-admin.site.register(District)
+admin.site.register(Province, CommonAdmin)
+admin.site.register(City, CommonAdmin)
+admin.site.register(District, CommonAdmin)
 admin.site.register(AdministrativeLevel)
