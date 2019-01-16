@@ -5,7 +5,7 @@ from mptt.models import MPTTModel
 
 class Area(MPTTModel):
     name = models.CharField('名称', max_length=50, unique=True)
-    parent_area = models.ForeignKey('self', verbose_name='上级区域', null=True, blank=True, related_name='children')
+    parent_area = models.ForeignKey('self', verbose_name='上级区域', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
     class Meta:
         db_table = 'area'
