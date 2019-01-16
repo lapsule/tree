@@ -24,14 +24,14 @@ SECRET_KEY = '_4+m=(_)74*)i7(wccx5wr-@&0w)fbpd4$4#84nt3_qz9&h-yp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli.dashboard',
-    'grappelli',
-    'filebrowser',
+    # 'grappelli.dashboard',
+    # 'grappelli',
+    # 'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
