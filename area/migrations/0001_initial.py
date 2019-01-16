@@ -19,7 +19,8 @@ class Migration(migrations.Migration):
                 ('rght', models.PositiveIntegerField(editable=False, db_index=True)),
                 ('tree_id', models.PositiveIntegerField(editable=False, db_index=True)),
                 ('level', models.PositiveIntegerField(editable=False, db_index=True)),
-                ('parent', models.ForeignKey(related_name='children', verbose_name=b'\xe4\xb8\x8a\xe7\xba\xa7\xe5\x8c\xba\xe5\x9f\x9f', on_delete=models.PROTECT, blank=True, to='area.Area', null=True)),
+                ('parent', models.ForeignKey(related_name='children', on_delete=models.CASCADE, verbose_name=b'\xe4\xb8\x8a\xe7\xba\xa7\xe5\x8c\xba\xe5\x9f\x9f', blank=True, to='area.Area', null=True)),
+
             ],
             options={
                 'db_table': 'area',

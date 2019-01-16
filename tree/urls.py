@@ -21,7 +21,7 @@ from filebrowser.sites import site
 from area.views import tree
 
 urlpatterns = [
-    url(r'admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^tree/', tree),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'admin/filebrowser/', site.urls),
